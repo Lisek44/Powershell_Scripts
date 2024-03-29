@@ -7,12 +7,12 @@ function TextForUserCorrect {
     Write-Host "Found ""$groupName""" -ForegroundColor Green
     Write-Host "AD Group info is in Variable - " -ForegroundColor Green -NoNewline
     Write-Host "ADGroup" -ForegroundColor Blue
-    if ($usersCount -gt 0){
+    if ($usersCount -gt 0) {
         Write-Host "AD Group Users Members are in Variable - " -ForegroundColor Green -NoNewline
         Write-Host "ADGroupUsersMembers" -ForegroundColor Blue -NoNewline
         Write-Host " | Count:" $usersCount -ForegroundColor Green
     }
-    if ($computersCount -gt 0){
+    if ($computersCount -gt 0) {
         Write-Host "AD Group Computer Members are in Variable - " -ForegroundColor Green -NoNewline
         Write-Host "ADGroupComputersMembers" -ForegroundColor Blue -NoNewline
         Write-Host " | Count:" $computersCount -ForegroundColor Green
@@ -21,7 +21,7 @@ function TextForUserCorrect {
     # Write-Host $usersCount -ForegroundColor Blue
     # Write-Host "Computers:" -ForegroundColor Green -NoNewline
     # Write-Host $computersCount -ForegroundColor Blue
-    if ($null -ne $ADGroupMembersHistory){
+    if ($null -ne $ADGroupMembersHistory) {
         Write-Host "AD Group MembersHistory are in Variable - " -ForegroundColor Green -NoNewline
         Write-Host "ADGroupMembersHistory" -ForegroundColor Blue
     }

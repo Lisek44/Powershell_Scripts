@@ -5,14 +5,15 @@ function ExportDatatoCSV {
         [array]$exportVar
     )
     $exportVar | ForEach-Object -Process {
-        if (Test-Path -Path .\Export\$PSItem.csv){
+        if (Test-Path -Path .\Export\$PSItem.csv) {
             Remove-Item -Path .\Export\$PSItem.csv
         }
         $exportVariable = Get-Variable $PSItem
-        if ($null -ne $exportVariable.Value){
-            if ($null -eq $exportVariable.Value.Count){
+        if ($null -ne $exportVariable.Value) {
+            if ($null -eq $exportVariable.Value.Count) {
                 Export-Csv -InputObject $exportVariable.Value -Path .\Export\$PSItem.csv -NoTypeInformation
-            } else {
+            }
+            else {
                 $name = $exportVariable.Name
                 $exportVariable.Value | ForEach-Object -Process {
                     Export-Csv -InputObject $PSItem -Path .\Export\$name.csv -NoTypeInformation -Append -Force
@@ -20,4 +21,9 @@ function ExportDatatoCSV {
             }
         }
     }
+}
+
+function ExportTextForUser {
+    Write-Host "Exported Data is at: " -ForegroundColor Green -NoNewline
+    Write-Host ".\Export" -ForegroundColor Blue
 }

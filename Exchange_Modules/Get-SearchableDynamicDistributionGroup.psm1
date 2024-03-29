@@ -6,6 +6,7 @@ function Get-SearchableDynamicDistributionGroup {
     )
 
     BEGIN {
+        # Creating necessary variables
         $Global:emailData = $null
         $Global:emailDataMembers = $null
         $Global:checkData = $null
@@ -16,6 +17,7 @@ function Get-SearchableDynamicDistributionGroup {
 
     PROCESS {
         try {
+            # Searching for speficified $email and members information
             Write-Progress -Activity "Searching Dynamic Distribution Group" -Status "Searching"
             $Global:emailData = Get-DynamicDistributionGroup $email -ErrorAction Stop | Select-Object -Property * -ErrorAction Stop
             $Global:emailDataMembers = Get-DynamicDistributionGroupMember $email -ResultSize Unlimited -ErrorAction Stop | Select-Object -Property * -ErrorAction Stop | Sort-Object Name

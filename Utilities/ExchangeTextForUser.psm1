@@ -21,6 +21,24 @@ function TextForUserCorrect {
             Write-Host "AD Group MembersHistory are in Variable - " -ForegroundColor Green -NoNewline
             Write-Host "ADGroupMembersHistory" -ForegroundColor Blue
         }
+        {$type -eq "Distribution Group"}{
+            Write-Host "Members are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataMembers" -ForegroundColor Blue
+            Write-Host "Owners are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataOwners" -ForegroundColor Blue
+        }
+        {$type -eq "Dynamic Distribution Group"}{
+            Write-Host "Members are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataMembers" -ForegroundColor Blue
+            Write-Host "Owners are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataOwners" -ForegroundColor Blue
+        }
+        {$type -eq "Exchange/Teams Group"}{
+            Write-Host "Members are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataMembers" -ForegroundColor Blue
+            Write-Host "Owners are in Variable - " -ForegroundColor Green -NoNewline
+            Write-Host "emailDataOwners" -ForegroundColor Blue
+        }
         default{
             Write-Host "Members are in Variable - " -ForegroundColor Green -NoNewline
             Write-Host "emailDataMembers" -ForegroundColor Blue
